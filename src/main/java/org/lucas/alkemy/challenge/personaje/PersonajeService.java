@@ -22,6 +22,23 @@ public class PersonajeService {
 		return this.personajeRepository.findOptionalByNombre(Nombre).orElse(null);
 	}
 	
+	// búsquedas especiales
+	
+	public List<Personaje> findByEdad(Integer edad){
+		return this.personajeRepository.findByEdad(edad);
+	}
+	
+	public List<Personaje> findByPeso(Double peso){
+		return this.personajeRepository.findByPeso(peso);
+	}
+	
+	public List<Personaje> findByPelicula(Long idPelicula){
+		return null;
+	}
+	
+
+	// crear editar y eliminar un personaje
+	
 	public Personaje savePersonaje(Personaje personaje) {
 		return this.personajeRepository.save(personaje);
 	}

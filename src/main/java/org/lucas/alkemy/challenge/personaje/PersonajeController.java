@@ -24,11 +24,28 @@ public class PersonajeController {
 		return this.personajeService.getAllCharacters();
 	}
 	
-	// busqueda de personajes
-	
-	@GetMapping("/character")
+	@GetMapping(value = "/characters", params = "name")
 	public Personaje buscarPorNombre(@RequestParam(name = "name" )String nombre) {
 		return this.personajeService.findByNombre(nombre);
+	}
+	
+	// busquedas especiales
+	
+	@GetMapping(value = "/characters", params = "age")
+	public List<Personaje> buscarPorEdad(@RequestParam(name = "age" ) Integer edad) {
+		
+		return null;
+	}
+	
+	@GetMapping(value = "/characters", params = "weight")
+	public List<Personaje> buscarPorPeso(@RequestParam(name = "weight" ) Double peso) {
+		
+		return null;
+	}
+	
+	@GetMapping(value = "/characters", params = "idMovie")
+	public List<Personaje> buscarPorPelicula(@RequestParam(name = "idMovie" ) Long idPelicula) {
+		return null;
 	}
 	
 	// Crear, editar y eliminar
