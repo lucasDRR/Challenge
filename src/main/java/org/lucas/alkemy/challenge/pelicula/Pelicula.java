@@ -29,6 +29,9 @@ public class Pelicula {
 
 	@Column(name = "STARS")
 	private int calificacion;
+	
+	// para pruebas 
+	private String genero;
 
 	// private List<Personaje> personajes;
 }
