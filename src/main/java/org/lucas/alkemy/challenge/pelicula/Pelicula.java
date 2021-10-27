@@ -36,7 +36,6 @@ public class Pelicula {
 	@Column(name = "STARS")
 	private int calificacion;
 
-	// para pruebas
 	@ManyToOne(optional = false)
 	@JoinColumn(name = "ID_GENERO")
 	@JsonManagedReference
