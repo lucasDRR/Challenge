@@ -7,6 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import org.lucas.alkemy.challenge.genero.Genero;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.Data;
 
@@ -29,9 +35,13 @@ public class Pelicula {
 
 	@Column(name = "STARS")
 	private int calificacion;
-	
-	// para pruebas 
-	private String genero;
 
+	// para pruebas
+	@ManyToOne(optional = false)
+	@JoinColumn(name = "ID_GENERO")
+	@JsonManagedReference
+	private Genero genero;
+
+	// @ManyToMany
 	// private List<Personaje> personajes;
 }
