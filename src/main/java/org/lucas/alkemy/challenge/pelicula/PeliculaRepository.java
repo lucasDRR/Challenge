@@ -12,7 +12,7 @@ public interface PeliculaRepository extends JpaRepository<Pelicula, Long> {
 
 	public Optional<Pelicula> findOptionalByTitulo(String titulo);
 
-	public List<Pelicula> findByGenero(String genero);
+	public List<Pelicula> findByGeneroId(Long genero);
 
 	public List<Pelicula> findAll(Sort sort);
 

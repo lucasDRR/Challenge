@@ -15,57 +15,54 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin
 public class PersonajeController {
-	
+
 	@Autowired
 	private PersonajeService personajeService;
-	
+
 	@GetMapping("/characters")
 	public List<PersonajeParaLista> verTodoslosPersonajes() {
 		return this.personajeService.getAllCharacters();
 	}
-	
+
 	@GetMapping(value = "/characters", params = "name")
-	public Personaje buscarPorNombre(@RequestParam(name = "name" )String nombre) {
+	public Personaje buscarPorNombre(@RequestParam(name = "name") String nombre) {
 		return this.personajeService.findByNombre(nombre);
 	}
-	
+
 	// busquedas especiales
-	
+
 	@GetMapping(value = "/characters", params = "age")
-	public List<Personaje> buscarPorEdad(@RequestParam(name = "age" ) Integer edad) {
-		
-		return null;
+	public List<Personaje> buscarPorEdad(@RequestParam(name = "age") Integer edad) {
+
+		return this.personajeService.findByEdad(edad);
 	}
-	
+
 	@GetMapping(value = "/characters", params = "weight")
-	public List<Personaje> buscarPorPeso(@RequestParam(name = "weight" ) Double peso) {
-		
-		return null;
+	public List<Personaje> buscarPorPeso(@RequestParam(name = "weight") Double peso) {
+
+		return this.personajeService.findByPeso(peso);
 	}
-	
+
 	@GetMapping(value = "/characters", params = "idMovie")
-	public List<Personaje> buscarPorPelicula(@RequestParam(name = "idMovie" ) Long idPelicula) {
-		return null;
+	public List<Personaje> buscarPorPelicula(@RequestParam(name = "idMovie") Long idPelicula) {
+		return this.personajeService.findByPeliculaId(idPelicula);
 	}
-	
+
 	// Crear, editar y eliminar
-	
+
 	@PostMapping("/characters")
 	public Personaje crearPersonaje(@RequestBody Personaje personaje) {
 		return this.personajeService.savePersonaje(personaje);
 	}
-	
-	
+
 	@PutMapping("/characters")
 	public void EditarPersonaje(@RequestBody Personaje personaje) {
 		this.personajeService.editPersonaje(personaje);
 	}
-	
-	
+
 	@DeleteMapping("/characters")
 	public void borrarPersonaje(@RequestBody Personaje personaje) {
 		this.personajeService.deletePersonaje(personaje);
 	}
-
 
 }

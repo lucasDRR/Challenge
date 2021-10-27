@@ -24,9 +24,9 @@ public class PeliculaService {
 		return this.peliculaRepository.findOptionalByTitulo(Nombre).orElse(null);
 	}
 
-	public List<Pelicula> findByGenero(String genero) {
+	public List<Pelicula> findByGeneroId(Long generoId) {
 
-		return this.peliculaRepository.findByGenero(genero);
+		return this.peliculaRepository.findByGeneroId(generoId);
 	}
 
 	public List<Pelicula> findAllSortedByFecha(String order) {

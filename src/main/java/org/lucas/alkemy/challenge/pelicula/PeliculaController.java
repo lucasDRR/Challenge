@@ -27,19 +27,19 @@ public class PeliculaController {
 	// búsquedas especiales
 
 	@GetMapping(value = "/movies", params = "name")
-	public Pelicula buscarPeliculaPorNombre(@RequestParam(name = "title") String nombre) {
+	public Pelicula buscarPeliculaPorNombre(@RequestParam(name = "name") String nombre) {
 		return this.peliculaService.findMovieByNombre(nombre);
 	}
 
 	@GetMapping(value = "/movies", params = "order")
 	public List<Pelicula> buscarPeliculasOrdenadasPorFecha(
-			@RequestParam(name = "order", defaultValue = "ASC") String nombre) {
-		return null;
+			@RequestParam(name = "order", defaultValue = "ASC") String orden) {
+		return this.peliculaService.findAllSortedByFecha(orden);
 	}
 
 	@GetMapping(value = "/movies", params = "genre")
-	public List<Pelicula> buscarPeliculasPorGenero(@RequestParam(name = "genre") String genero) {
-		return null;
+	public List<Pelicula> buscarPeliculasPorGenero(@RequestParam(name = "genre") Long generoId) {
+		return this.peliculaService.findByGeneroId(generoId);
 	}
 
 	// crear, editar y eliminar peliculas
