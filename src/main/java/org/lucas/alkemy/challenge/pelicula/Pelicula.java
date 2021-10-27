@@ -1,6 +1,7 @@
 package org.lucas.alkemy.challenge.pelicula;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,9 +9,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 import org.lucas.alkemy.challenge.genero.Genero;
+import org.lucas.alkemy.challenge.personaje.Personaje;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -25,6 +29,7 @@ public class Pelicula {
 	private Long id;
 
 	@Column(name = "IMAGE")
+	@Lob
 	private String imagen;
 
 	@Column(name = "TITLE")
@@ -41,6 +46,7 @@ public class Pelicula {
 	@JsonManagedReference
 	private Genero genero;
 
-	// @ManyToMany
-	// private List<Personaje> personajes;
+	@ManyToMany
+	@JsonManagedReference
+	private List<Personaje> personajes;
 }

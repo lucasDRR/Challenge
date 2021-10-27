@@ -1,10 +1,18 @@
 package org.lucas.alkemy.challenge.personaje;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
+
+import org.lucas.alkemy.challenge.pelicula.Pelicula;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import lombok.Data;
 
@@ -17,6 +25,7 @@ public class Personaje {
 	private Long id;
 
 	@Column(name = "IMAGE")
+	@Lob
 	private String imagen;
 
 	@Column(name = "NAME")
@@ -31,6 +40,8 @@ public class Personaje {
 	@Column(name = "STORY")
 	private String historia;
 
-	// private List<Pelicula> peliculas;
+	@ManyToMany(mappedBy = "personajes")
+	@JsonBackReference
+	private List<Pelicula> peliculas;
 
 }
