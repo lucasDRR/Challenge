@@ -16,5 +16,7 @@ public interface PersonajeRepository extends JpaRepository<Personaje, Long> {
 	public List<Personaje> findByPeso(Double peso);
 
 	public List<Personaje> findByPeliculasId(Long id);
+	
+	
 
 }

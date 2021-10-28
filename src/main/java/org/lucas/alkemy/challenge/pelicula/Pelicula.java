@@ -3,6 +3,7 @@ package org.lucas.alkemy.challenge.pelicula;
 import java.sql.Date;
 import java.util.List;
 
+import static javax.persistence.CascadeType.*;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -46,7 +47,7 @@ public class Pelicula {
 	@JsonManagedReference
 	private Genero genero;
 
-	@ManyToMany
+	@ManyToMany(cascade = {PERSIST, DETACH, MERGE, REFRESH } )
 	@JsonManagedReference
 	private List<Personaje> personajes;
 }

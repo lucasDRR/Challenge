@@ -18,7 +18,7 @@ public class PersonajeService {
 
 	public Personaje findByNombre(String Nombre) {
 
-		return this.personajeRepository.findOptionalByNombre(Nombre).orElse(null);
+		return this.personajeRepository.findOptionalByNombre(Nombre).orElse(null);		
 	}
 
 	// búsquedas especiales

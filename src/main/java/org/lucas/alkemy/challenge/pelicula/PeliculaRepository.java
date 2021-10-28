@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 public interface PeliculaRepository extends JpaRepository<Pelicula, Long> {
 	
 	public List<PeliculaParaLista> findAllBy();
-
+	
 	public Optional<Pelicula> findOptionalByTitulo(String titulo);
 
 	public List<Pelicula> findByGeneroId(Long genero);
