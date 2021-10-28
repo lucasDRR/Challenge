@@ -12,9 +12,9 @@ public class PeliculaService {
 	@Autowired
 	private PeliculaRepository peliculaRepository;
 
-	public List<Pelicula> getAllMovies() {
+	public List<PeliculaParaLista> getAllMovies() {
 
-		return this.peliculaRepository.findAll();
+		return this.peliculaRepository.findAllBy();
 	}
 
 	// busquedas especiales

@@ -20,7 +20,7 @@ public class PeliculaController {
 	private PeliculaService peliculaService;
 
 	@GetMapping("/movies")
-	public List<Pelicula> verTodasLasPeliculas() {
+	public List<PeliculaParaLista> verTodasLasPeliculas() {
 		return this.peliculaService.getAllMovies();
 	}
 
