@@ -48,14 +48,18 @@ public class JwtUtils {
 		return this.verificarJwtToken(token).getSubject();
 	}
 
-	/** true indica que el token está caducado.
-	 * false indica que el token es valido
+	/**
+	 * Determina si el JWT token caducó o no. No valida la firma del token.
+	 * @param token
+	 * @return true si el token ya caducó o false si el token es válido.
 	 */
 	public boolean isTokenExpired(String token) {
 
 		return JWT.decode(token)
 		.getExpiresAt()
-		.after(new Date(System.currentTimeMillis()));
+		.before(new Date(System.currentTimeMillis()));
+		
+		
 	}
 
 }
