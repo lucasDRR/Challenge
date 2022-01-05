@@ -1,7 +1,10 @@
-package org.lucas.alkemy.challenge.pelicula;
+package org.lucas.alkemy.challenge.services;
 
 import java.util.List;
 
+import org.lucas.alkemy.challenge.DTOS.PeliculaParaLista;
+import org.lucas.alkemy.challenge.models.Pelicula;
+import org.lucas.alkemy.challenge.repositories.PeliculaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;

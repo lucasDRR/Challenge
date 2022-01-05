@@ -1,5 +1,9 @@
-package org.lucas.alkemy.challenge.user;
+package org.lucas.alkemy.challenge.controllers;
 
+import org.lucas.alkemy.challenge.models.User;
+import org.lucas.alkemy.challenge.repositories.UserRepository;
+import org.lucas.alkemy.challenge.user.JwAuthResponse;
+import org.lucas.alkemy.challenge.user.JwtAuthRequest;
 import org.lucas.alkemy.challenge.utils.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

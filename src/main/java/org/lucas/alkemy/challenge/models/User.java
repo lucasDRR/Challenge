@@ -1,4 +1,4 @@
-package org.lucas.alkemy.challenge.user;
+package org.lucas.alkemy.challenge.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

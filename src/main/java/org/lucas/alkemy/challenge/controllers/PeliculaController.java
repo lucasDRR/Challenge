@@ -1,7 +1,10 @@
-package org.lucas.alkemy.challenge.pelicula;
+package org.lucas.alkemy.challenge.controllers;
 
 import java.util.List;
 
+import org.lucas.alkemy.challenge.DTOS.PeliculaParaLista;
+import org.lucas.alkemy.challenge.models.Pelicula;
+import org.lucas.alkemy.challenge.services.PeliculaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;

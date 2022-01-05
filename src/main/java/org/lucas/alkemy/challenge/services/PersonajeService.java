@@ -1,7 +1,10 @@
-package org.lucas.alkemy.challenge.personaje;
+package org.lucas.alkemy.challenge.services;
 
 import java.util.List;
 
+import org.lucas.alkemy.challenge.DTOS.PersonajeParaLista;
+import org.lucas.alkemy.challenge.models.Personaje;
+import org.lucas.alkemy.challenge.repositories.PersonajeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

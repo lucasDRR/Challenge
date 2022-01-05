@@ -1,4 +1,4 @@
-package org.lucas.alkemy.challenge.pelicula;
+package org.lucas.alkemy.challenge.DTOS;
 
 import java.sql.Date;
 

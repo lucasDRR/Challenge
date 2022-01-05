@@ -1,4 +1,4 @@
-package org.lucas.alkemy.challenge.pelicula;
+package org.lucas.alkemy.challenge.models;
 
 import java.sql.Date;
 import java.util.List;
@@ -13,9 +13,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-
-import org.lucas.alkemy.challenge.genero.Genero;
-import org.lucas.alkemy.challenge.personaje.Personaje;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 

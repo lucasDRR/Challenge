@@ -1,4 +1,4 @@
-package org.lucas.alkemy.challenge.personaje;
+package org.lucas.alkemy.challenge.DTOS;
 
 public interface PersonajeParaLista {
 

@@ -3,6 +3,8 @@ package org.lucas.alkemy.challenge.user;
 
 import java.util.Optional;
 
+import org.lucas.alkemy.challenge.models.User;
+import org.lucas.alkemy.challenge.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
