@@ -27,7 +27,7 @@ public class JwtUtils {
 			jwtToken = JWT.create()
 					.withSubject(userDetails.getUsername())
 					.withIssuedAt(new Date(System.currentTimeMillis()))
-					.withExpiresAt(new Date(System.currentTimeMillis() + 1000 * 60 * 60))
+					.withExpiresAt(new Date(System.currentTimeMillis() + 1000 * 60 * 10))
 					.sign(algo);
 
 		} catch (JWTCreationException e) {
